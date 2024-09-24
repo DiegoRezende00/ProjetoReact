@@ -25,7 +25,7 @@ Nav link
 }
 .nav-link button{
     background-color: white;
-    color: black
+    color: rgb(29, 29, 29)
 }
 /* }
 Botão login e carrinho
@@ -41,5 +41,5 @@ Botão login e carrinho
 }
 .login-cart button{
     background-color: white;
-    color: black
+    color: rgb(29, 29, 29)
 }
