@@ -1,11 +1,12 @@
 import React from 'react'
+import CartWidget from './CartWidget';
 
-const Navbar = () => {
+function Navbar (){
   return (
-     <nav class="nav-bar">
+    <nav class="nav-bar">
         <div class='nav'>
             <div class='logo-page'>
-                <h1><img src="" alt=""/><a href="index.html">Loja de calçados</a></h1>
+                <a href="index.html"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvL4tHGi6J4HfA2BxLTNgVSGWf5Dp3Gc92Dg&s" alt=""/></a>
             </div>
             <div class='nav-link'>
                 <ul>
@@ -16,9 +17,8 @@ const Navbar = () => {
                 </ul>
             </div>
             <div class='login-cart'>
-                <a href="login.html"><button>Login</button></a>
-
-                <a href="carrinho.html"><button>Carrinho</button></a>
+                <a href="login.html"><button>Login</button></a> 
+                <CartWidget />              
             </div>
          </div>
      </nav>

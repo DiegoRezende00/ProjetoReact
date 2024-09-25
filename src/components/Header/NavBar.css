@@ -5,12 +5,20 @@
 }
 .logo-page{
     grid-area: logo1;
+    display: flex;
+    justify-content: center;
+}
+.logo-page img{
+    border-radius: 2rem;
 }
 /* }
 Nav link 
 */
 .nav-link{
     grid-area: page;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .nav-link ul{
     display: flex;
