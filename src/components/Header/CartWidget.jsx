@@ -10,14 +10,7 @@ function CartWidget() {
 }
 export default CartWidget;
 
-function ItemListContainer() {
-    return(
-        <div>Teste</div>
-    )
-}
 //     return (
 //         <div>Teste</div>
 //     )
 // }
-
-

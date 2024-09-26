@@ -6,9 +6,7 @@ import './components/Header/NavBar.css'
 
 function App() {
   return(
-    <div>
       <Navbar />
-    </div>
   )
 }
 export default App

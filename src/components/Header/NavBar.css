@@ -43,11 +43,13 @@ Botão login e carrinho
     display: flex;
     align-items: center;
     justify-content: right;
+    padding-right: 2rem;
+    
 }
 .login-cart a{
-    padding: 1rem;
+    padding: 1rem;   
 }
 .login-cart button{
     background-color: white;
-    color: rgb(29, 29, 29)
+    color: rgb(29, 29, 29);
 }
