@@ -3,9 +3,11 @@ import { BiCart } from "react-icons/bi";
 
 function CartWidget() {
   return (
-    <button>
-      <BiCart />
-    </button>
+    <div>
+      <button>
+        <BiCart />
+      </button>
+    </div>
   );
 }
 export default CartWidget;

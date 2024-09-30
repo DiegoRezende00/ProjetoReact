@@ -1,6 +1,7 @@
 import React from 'react'
 import CartWidget from './CartWidget';
 
+
 const navItems = [
     { id: 'main-page', label: 'Inicio', link: 'index.html' },
     { id: 'nike-page', label: 'Nike', link: 'nike.html' },
@@ -26,7 +27,7 @@ function Navbar (){
             </div>
             <div className='login-cart'>
                 <a href="login.html"><button>Login</button></a> 
-                <CartWidget />    
+                <CartWidget />
             </div>
         </div>
     </nav>

@@ -2,11 +2,19 @@ import React from 'react'
 import './App.css'
 import Navbar from './components/header/NavBar.jsx'
 import './components/Header/NavBar.css'
+import ItemListContainer from './components/Cart/ItemListContainer.jsx'
 
 
 function App() {
   return(
-      <Navbar />
+    <div>
+      <div>
+        <Navbar />
+      </div>
+      <div>
+        <ItemListContainer />
+      </div>
+    </div>
   )
 }
 export default App
