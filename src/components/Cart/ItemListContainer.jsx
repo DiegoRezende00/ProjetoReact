@@ -1,11 +1,12 @@
 import React from "react";
-import Contador from "../Header/ItemCount";
+import Item from "./Item";
+
 
 
 function ItemListContainer(){
     return(
         <div>
-            <Contador />
+            <Item />
         </div>
     )
 }

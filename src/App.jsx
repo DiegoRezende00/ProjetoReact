@@ -1,7 +1,7 @@
 import React from 'react'
 import './App.css'
-import Navbar from './components/header/NavBar.jsx'
 import './components/Header/NavBar.css'
+import Navbar from './components/header/NavBar.jsx'
 import ItemListContainer from './components/Cart/ItemListContainer.jsx'
 
 
