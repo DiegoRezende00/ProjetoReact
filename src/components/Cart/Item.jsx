@@ -11,7 +11,7 @@ export default function Item(){
     }, []);
 
     return (
-        <div>
+        <div className="product__lista">
             {products.map( product  => (
                 <div className="product__list">
                     

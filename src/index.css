@@ -85,5 +85,13 @@ button{
   flex-direction: column;
   border: 1px solid white;
   max-width: 20rem;
-  
+  align-items: center;
+  justify-content: center;
+}
+.product__lista{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
 }

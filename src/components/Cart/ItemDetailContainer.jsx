@@ -1,43 +1,63 @@
 import React, { useState } from "react";
+import { useParams } from "react-router-dom";
 
 const getItem = () => {
 
 }
 
-const itemDetail = ({item}) => {
-    return(
-        <div>
-            <h1>{item.marca}</h1>
-            <p>{item.produto}</p>
-            <p>{item.preco}</p>
-        </div>
-    )
-}
+export default function myComponent(){
 
-const myComponent = () => {
-    const [item, setItem] = useState(null)
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(null);
+
+const itemDetail = ({item}) => {
+
+    const {id} = useParams()
+    const [product, setProduct] = useState({})
+    const [loading, setLoading] = useState(false)
+
     useEffect(() => {
-        getItem()
-            .then(data => {
-                setItem(data);
-            })
-            .catch(error => {
-                setError(error.message);
-            })
-            .finally(() => {
+        setLoading(true);
+        setTimeout(() => {
+            fetch(`https://fakestoreapi.com/products/${id}`)
+            .then((response) => response.json())
+            .then((data) => {
+                setProduct(data);
                 setLoading(false);
             });
-    }, []);
-    if (loading) return <div>Carregando...</div>;
-    if (error) return <div>Erro: {error}</div>;
+        }, 1000);
+        }, [])
+        
+    return(
+        <>
+        {loading && <div>Carregando...</div>}
+        {!loading && <h1>{product.title}</h1>}
+        </>
+    )
+}
+}
+// const myComponent = () => {
+//     const [item, setItem] = useState(null)
+//     const [loading, setLoading] = useState(true);
+//     const [error, setError] = useState(null);
+//     useEffect(() => {
+//         getItem()
+//             .then(data => {
+//                 setItem(data);
+//             })
+//             .catch(error => {
+//                 setError(error.message);
+//             })
+//             .finally(() => {
+//                 setLoading(false);
+//             });
+//     }, []);
+//     if (loading) return <div>Carregando...</div>;
+//     if (error) return <div>Erro: {error}</div>;
 
-    return (
-        <div>
-            <h1>Item:</h1>
-            {item && <itemDetail item={item} />}
-        </div>
-    );
-};
-export default myComponent
+//     return (
+//         <div>
+//             <h1>Item:</h1>
+//             {item && <itemDetail item={item} />}
+//         </div>
+//     );
+// };
+// }
