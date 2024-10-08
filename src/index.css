@@ -53,6 +53,10 @@ button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
+img{
+  max-width: 15rem;
+  max-height: 20rem;
+}
 
 @media (prefers-color-scheme: light) {
   :root {
@@ -65,4 +69,21 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+}
+
+button{
+  border: 1px solid wheat;
+  background-color: white;
+  color: rgb(29, 29, 29);
+  margin: 0.5rem;
+}
+.product__list{
+  display: flex;
+  flex: wrap;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border: 1px solid white;
+  max-width: 20rem;
+  
 }

@@ -4,9 +4,9 @@ import CartWidget from './CartWidget';
 
 const navItems = [
     { id: 'main-page', label: 'Inicio', link: 'index.html' },
-    { id: 'nike-page', label: 'Nike', link: 'nike.html' },
-    { id: 'adidas-page', label: 'Adidas', link: 'adidas.html' },
-    { id: 'puma-page', label: 'Puma', link: 'puma.html' },
+    { id: 'nike-page', label: 'Produtos 1', link: 'produtos1.html' },
+    { id: 'adidas-page', label: 'Produtos 2', link: 'produtos2.html' },
+    { id: 'puma-page', label: 'Produtos 3', link: 'produtos3.html' },
 ];
 
 function Navbar (){
