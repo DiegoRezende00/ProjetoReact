@@ -1,14 +1,7 @@
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 
-const getItem = () => {
-
-}
-
 export default function myComponent(){
-
-
-const itemDetail = ({item}) => {
 
     const {id} = useParams()
     const [product, setProduct] = useState({})
@@ -32,7 +25,7 @@ const itemDetail = ({item}) => {
         {!loading && <h1>{product.title}</h1>}
         </>
     )
-}
+
 }
 // const myComponent = () => {
 //     const [item, setItem] = useState(null)

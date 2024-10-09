@@ -3,8 +3,10 @@ import {BrowserRouter, Routes, Route} from "react-router-dom"
 import './App.css'
 import './components/Header/NavBar.css'
 import Navbar from './components/header/NavBar.jsx'
-import ItemListContainer from './components/Cart/ItemListContainer.jsx'
+// import ItemListContainer from './components/Cart/ItemListContainer.jsx'
 import Checkout from './components/Header/checkout.jsx'
+import Item from "./components/Cart/Item.jsx";
+
 
 function App() {  
   return(
@@ -12,10 +14,13 @@ function App() {
          <Navbar />  
         <hr />    
        <Routes>
-          <Route path='/cart' element={<Checkout />}/>
+          <Route path='/index.html' element={<Item />}> </Route>
+          <Route path='/' element={<Item />}> </Route>
+          <Route path='/checkout' element={<Checkout />}/>       
         </Routes>
         <hr />
-        <ItemListContainer />
+        
+        <footer>fim da página</footer>
      </BrowserRouter>
   )
 }

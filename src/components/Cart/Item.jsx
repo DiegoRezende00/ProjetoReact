@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react"
-import Contador from "./ItemCount"
 
 export default function Item(){
     const [products, setProducts] = useState([]);
@@ -13,7 +12,7 @@ export default function Item(){
     return (
         <div className="product__lista">
             {products.map( product  => (
-                <div className="product__list">
+                <div className="product__list" key={product.id}>
                     
                         <img src={product.image} />
                         <div>{product.title}</div>
