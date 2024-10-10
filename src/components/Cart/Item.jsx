@@ -6,7 +6,7 @@ export default function Item(){
     useEffect(() => {
         fetch("https://fakestoreapi.com/products")
         .then((response) => response.json())
-        .then((data) => {setProducts(data);});
+        .then((data) => {setProducts(data);})
     }, []);
 
     return (

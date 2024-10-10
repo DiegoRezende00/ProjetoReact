@@ -27,7 +27,7 @@ function Navbar (){
             </div>
             <div className='login-cart'>
                 <a href="login.html"><button>Login</button></a> 
-                <Link to='/checkout'><CartWidget /></Link>
+                <Link to='/cart'><CartWidget /></Link>
             </div>
         </div>
     </nav>
