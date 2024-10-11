@@ -1,32 +1,45 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 
-export default function myComponent(){
+export default function ProductDetail(){
 
-    const {productId} = useParams()
+    const {id} = useParams();
     const [product, setProduct] = useState({})
     const [loading, setLoading] = useState(false)
+    const [quantity, setQuantity] = useState(1)
+    // const {cart, setCart} = useState({})
 
     useEffect(() => {
         setLoading(true);
         setTimeout(() => {
-            fetch(`https://fakestoreapi.com/products/${productId}`)
+            fetch(`https://fakestoreapi.com/products/${id}`)
             .then((response) => response.json())
             .then((data) => {
                 setProduct(data);
                 setLoading(false);
             });
         }, 1000);
-        }, [productId])
+        }, [])
         
     return(
         <>
         {loading && <div>Carregando...</div>}
-        {!loading && <h1>{product.title}</h1>}
+        {!loading && ( 
+            <div>
+                <h1>{product.title}</h1>
+                <h2>R$ {product.price?.toFixed(2)}</h2>
+                <img src={product.image} />
+                <input 
+                value={quantity}
+                type="number" />
+                <button>Adicionar ao carrinho</button>
+            </div>        
+        )}
         </>
     )
 
 }
+
 // const myComponent = () => {
 //     const [item, setItem] = useState(null)
 //     const [loading, setLoading] = useState(true);

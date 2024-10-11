@@ -6,7 +6,7 @@ import Navbar from './components/header/NavBar.jsx'
 // import ItemListContainer from './components/Cart/ItemListContainer.jsx'
 import Checkout from './components/Header/checkout.jsx'
 import Item from "./components/Cart/Item.jsx";
-import myComponent from "./components/Cart/ItemDetailContainer.jsx";
+import ProductDetail from "./components/Cart/ProductDetail.jsx"
 
 
 function App() {  
@@ -16,11 +16,8 @@ function App() {
         <hr />    
        <Routes>
           <Route path='/index.html' element={<Item />}> </Route>
-          <Route path='/' element={<Item />}> </Route>
-          <Route path="/Produtos1.html/:id" element={<myComponent />}></Route>
-          <Route path="/Produtos2" ></Route>
-          <Route path="/Produtos3" ></Route>
-          <Route path='/checkout' element={<Checkout />}/>    
+          <Route path="/product/:id" element={<ProductDetail />} />
+          <Route path='/checkout' element={<Checkout />}/>
         </Routes>
         <hr />
         

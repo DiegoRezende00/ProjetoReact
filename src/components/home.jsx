@@ -1,10 +1,10 @@
 import React from "react";
 import {Link} from 'react-router-dom'
 
-export default function ProductLink( {id, title} ){
+export default function Home( {title} ){
     return (
         <div className="cursor-pointer">
-            <Link to={`/product/${id}`}>{title}</Link>     
+            <Link to={`/`}>{title}</Link>     
         </div>
     );
 }

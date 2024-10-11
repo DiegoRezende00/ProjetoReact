@@ -3,10 +3,10 @@ import CartWidget from './CartWidget';
 import { Link } from 'react-router-dom';
 
 const navItems = [
-    { id: 'main-page', label: 'Inicio', link: 'index.html' },
-    { id: 'nike-page', label: 'Produtos 1', link: 'produtos1.html' },
-    { id: 'adidas-page', label: 'Produtos 2', link: 'produtos2.html' },
-    { id: 'puma-page', label: 'Produtos 3', link: 'produtos3.html' },
+    { id: 'main-page', label: 'Inicio', link: '/index.html' },
+    { id: 'categoria1-page', label: 'Produtos 1', link: '/produtos1.html' },
+    { id: 'categoria2-page', label: 'Produtos 2', link: '/produtos2.html' },
+    { id: 'categoria3-page', label: 'Produtos 3', link: '/produtos3.html' },
 ];
 
 function Navbar (){
@@ -14,7 +14,7 @@ function Navbar (){
     <nav className="nav-bar">
         <div className='nav'>
             <div className='logo-page'>
-                <a href="index.html"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvL4tHGi6J4HfA2BxLTNgVSGWf5Dp3Gc92Dg&s" alt=""/></a>
+                <Link to={'/index.html'}><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvL4tHGi6J4HfA2BxLTNgVSGWf5Dp3Gc92Dg&s" alt=""/></Link>
             </div>
             <div className='nav-link'>
                 <ul>

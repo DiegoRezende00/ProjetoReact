@@ -1,25 +1,27 @@
-import React, { useEffect, useState } from "react"
+import React, { useEffect, useState } from "react";
+import ItemList from "../Products/ItemList";
 
 export default function Item(){
     const [products, setProducts] = useState([]);
+    const [loading, setLoading] = useState([false]);
 
     useEffect(() => {
+        setLoading(true);
         fetch("https://fakestoreapi.com/products")
         .then((response) => response.json())
-        .then((data) => {setProducts(data);})
+        .then((data) => {
+            setProducts(data);
+            setLoading(false)
+        });
     }, []);
 
     return (
         <div className="product__lista">
-            {products.map( product  => (
-                <div className="product__list" key={product.id}>
-                    
-                        <img src={product.image} />
-                        <div>{product.title}</div>
-                        <div>{product.price}</div>
-                        <input type="number" />
-                        <button>Adicionar ao carrinho</button>            
-                </div>
+            {loading && <h1> CARREGANDO... </h1>}
+            {!loading && 
+                products.map(({id, title})  => (
+                <ItemList key={title} id={id} title={title} />
+                
                 
             ))}
         </div>
