@@ -1,6 +1,8 @@
 import React from "react";
 import {Link} from 'react-router-dom'
 
+//Página onde renderizamos o produto selecionado
+
 export default function ProductLink( {id, title} ){
     return (
         <div className="cursor-pointer">

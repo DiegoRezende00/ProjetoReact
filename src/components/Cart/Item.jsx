@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import ItemList from "../Products/ItemList";
 
+//Onde carregamos a página com todos os produtos
+
 export default function Item(){
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState([false]);
@@ -20,8 +22,7 @@ export default function Item(){
             {loading && <h1> CARREGANDO... </h1>}
             {!loading && 
                 products.map(({id, title})  => (
-                <ItemList key={title} id={id} title={title} />
-                
+                <ItemList key={title} id={id} title={title} />               
                 
             ))}
         </div>

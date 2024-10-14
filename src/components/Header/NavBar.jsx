@@ -9,6 +9,8 @@ const navItems = [
     { id: 'categoria3-page', label: 'Produtos 3', link: '/produtos3.html' },
 ];
 
+//NavBar da página com o logo, botão do carrinho e login
+
 function Navbar (){
   return (
     <nav className="nav-bar">

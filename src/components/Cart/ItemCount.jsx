@@ -1,14 +1,6 @@
 import React, { useState } from "react";
 
-// function ItemCount({ stock, initial,  onAdd }){
-//     <div>
-//         <ItemCount stock="5" initial="1" />
-//         <input type="button" id="aumentaQuantidade" value="+"/>
-//         <input type="button" id="aumentaQuantidade" value="-"/>
-//     </div>
-// }
-
-// export default ItemCount
+//Página de contador de produtos (Não estou usando na página, mas poderá ser útil)
 
 const Contador = () => {
     const [somar, setSomar] = useState(0);

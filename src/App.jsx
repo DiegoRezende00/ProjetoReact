@@ -8,6 +8,8 @@ import Checkout from './components/Header/checkout.jsx'
 import Item from "./components/Cart/Item.jsx";
 import ProductDetail from "./components/Cart/ProductDetail.jsx"
 
+//Página principal onde estão todas as rotas da página
+
 
 function App() {  
   return(
@@ -15,6 +17,7 @@ function App() {
          <Navbar />  
         <hr />    
        <Routes>
+          <Route path="/" element={<Item />}></Route>
           <Route path='/index.html' element={<Item />}> </Route>
           <Route path="/product/:id" element={<ProductDetail />} />
           <Route path='/checkout' element={<Checkout />}/>
