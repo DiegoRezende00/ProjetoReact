@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import ItemList from "../Products/ItemList";
 
-//Onde carregamos a página com todos os produtos
+//Onde renderizamos o produto selecionado
 
 export default function Item(){
     const [products, setProducts] = useState([]);
