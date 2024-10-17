@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 import CartContext from "../CartContext/CartContext";
 
-function CartItem({ id, name, quantity }) {
+function CartItem({ id, title, quantity }) {
   const [editando, setEditando] = useState(false);
   const { cart, dispatch } = useContext(CartContext);
 
@@ -26,21 +26,19 @@ function CartItem({ id, name, quantity }) {
 
   return (
     <li>
-      {`${name}`}
+      {`${title}`}
       {!editando && ` X ${quantity}`}
       {editando && (
         <input onChange={handleChangeQuantity} value={quantity} type="number" />
       )}
       <button
-        // className="border-red-500 border-2 rounded-md p-1"
-        onClick={() => {
+          onClick={() => {
           handleRemoveItem(id);
         }}
       >
         Remover
       </button>
       <button
-        // className="border-blue-700 border-2 rounded-md p-1"
         onClick={() => {
         setEditando(!editando);
         }}

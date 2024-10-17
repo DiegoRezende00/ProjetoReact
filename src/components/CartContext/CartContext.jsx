@@ -14,12 +14,12 @@
             (productItem) => productItem.id === action.item.id
           );
   
-          // if (!existeItem) {
-          //   newCart = [...cart, action.item];
-          // }
-          // if (existeItem) {
+          if (!existeItem) {
+             newCart = [...cart, action.item];
+           }
+           if (existeItem) {
           //   // Licao de casa! Alterar a quantidade de items do carrinho adicionando a quantidade vinda do action.item
-          // }
+          }
 
           newCart = [...cart, action.item];
   
