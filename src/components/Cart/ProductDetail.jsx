@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { useParams } from "react-router-dom";
-// import CartContext from "../CartContext/CartContext";
+import CartContext from "../CartContext/CartContext";
+
 
 //Página onde carregamos o produto selecionado! 
 
@@ -12,7 +13,7 @@ export default function ProductDetail(){
     const [loading, setLoading] = useState(false)
     const [quantity, setQuantity] = useState(1)
     
-    // const{ cart, dispatch } = useContext(CartContext);
+    const{ cart, dispatch } = useContext(CartContext);
 
     useEffect(() => {
         setLoading(true);

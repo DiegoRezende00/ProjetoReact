@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
-import ItemList from "../Products/ItemList";
+import ProductLink from "./ItemList";
 
-//Onde renderizamos o produto selecionado
+
+//Onde renderizamos todos os produtos e importamos o itemlist onde estamos fazendo com o id do produto selecionado
 
 export default function Item(){
     const [products, setProducts] = useState([]);
@@ -22,7 +23,7 @@ export default function Item(){
             {loading && <h1> CARREGANDO... </h1>}
             {!loading && 
                 products.map(({id, title})  => (
-                <ItemList key={title} id={id} title={title} />               
+                <ProductLink key={title} id={id} title={title} />               
                 
             ))}
         </div>

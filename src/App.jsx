@@ -3,29 +3,37 @@ import {BrowserRouter, Routes, Route} from "react-router-dom"
 import './App.css'
 import './components/Header/NavBar.css'
 import Navbar from './components/header/NavBar.jsx'
-// import ItemListContainer from './components/Cart/ItemListContainer.jsx'
 import Checkout from './components/Header/checkout.jsx'
 import Item from "./components/Cart/Item.jsx";
 import ProductDetail from "./components/Cart/ProductDetail.jsx"
+import Categoria from "./components/Products/Category.jsx"
+import { CartProvider } from "./components/CartContext/CartContext.jsx"
+import { Cart } from "./components/Cart/Cart.jsx"
+
+
 
 //Página principal onde estão todas as rotas da página
 
 
 function App() {  
   return(
+    <CartProvider >
     <BrowserRouter>
          <Navbar />  
         <hr />    
        <Routes>
           <Route path="/" element={<Item />}></Route>
-          <Route path='/index.html' element={<Item />}> </Route>
+          <Route path="/index.html" element={<Item />}></Route>
           <Route path="/product/:id" element={<ProductDetail />} />
+          <Route path="/cart" element={< Cart/>}></Route>
           <Route path='/checkout' element={<Checkout />}/>
+          <Route path="/product/:category" element={<Categoria />}></Route>
         </Routes>
         <hr />
         
         <footer>fim da página</footer>
      </BrowserRouter>
+     </CartProvider>
   )
 }
 export default App
