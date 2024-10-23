@@ -10,8 +10,8 @@ function Cart(){
       <h1>Cart</h1>
       <ul>
         {cart?.length === 0 && "Seu carrinho está vazio!"}
-        {cart?.map(({ id, title, quantity }) => (
-          <CartItem key={title} id={id} title={title} quantity={quantity} />
+        {cart?.map(({ id, name, quantity }) => (
+          <CartItem key={id} id={id} name={name} quantity={quantity} />
         ))}
       </ul>
     </>

@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 import CartContext from "../CartContext/CartContext";
 
-function CartItem({ id, title, quantity }) {
+function CartItem({ id, name, quantity }) {
   const [editando, setEditando] = useState(false);
   const { cart, dispatch } = useContext(CartContext);
 
@@ -26,7 +26,7 @@ function CartItem({ id, title, quantity }) {
 
   return (
     <li>
-      {`${title}`}
+      {`${name}`}
       {!editando && ` X ${quantity}`}
       {editando && (
         <input onChange={handleChangeQuantity} value={quantity} type="number" />

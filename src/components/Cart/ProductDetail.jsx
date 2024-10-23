@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useContext } from "react";
 import { useParams } from "react-router-dom";
 import CartContext from "../CartContext/CartContext";
+import { doc, getDoc } from "firebase/firestore/lite";
+import db from "../../Firestore";
 
 
 //Página onde carregamos o produto selecionado! 
@@ -17,14 +19,15 @@ export default function ProductDetail(){
 
     useEffect(() => {
         setLoading(true);
-        setTimeout(() => {
-            fetch(`https://fakestoreapi.com/products/${id}`)
-            .then((response) => response.json())
-            .then((data) => {
-                setProduct(data);
-                setLoading(false);
-            });
-        }, 1000);
+        (async function () {
+            const docRef = doc(db, "products", id);
+            const productPrint = await getDoc(docRef);
+
+            const product = productPrint.data();
+            
+            setProduct(product)
+            setLoading(false)
+        })()
         }, [])
 
 
@@ -48,7 +51,7 @@ export default function ProductDetail(){
         {loading && <div>Carregando...</div>}
         {!loading && ( 
             <div>
-                <h1>{product.title}</h1>
+                <h1>{product.name}</h1>
                 <h2>R$ {product.price?.toFixed(2)}</h2>
                 <img src={product.image} />
                 <input 
