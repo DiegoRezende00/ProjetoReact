@@ -25,7 +25,7 @@ export default function ProductDetail(){
 
             const product = productPrint.data();
             
-            setProduct(product)
+            setProduct( { id: productPrint.id, ...product } )
             setLoading(false)
         })()
         }, [])
