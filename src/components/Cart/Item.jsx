@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from "react";
-import ProductLink from "./ItemList";
 import { collection, getDocs } from "firebase/firestore/lite"; //Ajuda a especificar com qual coleção estamos querendo interagir
+import { Link } from "react-router-dom";
 import db from "../../Firestore";
+import ProductLink from "./ItemList";
 
 
 //Onde renderizamos todos os produtos e importamos o itemlist onde estamos fazendo com o id do produto selecionado
 
 export default function Item(){
     const [products, setProducts] = useState([]);
-    const [loading, setLoading] = useState([false]);
+    const [loading, setLoading] = useState(false);
 
     // useEffect(() => {
     //     setLoading(true);
@@ -29,21 +30,23 @@ export default function Item(){
                 return {
                     id: doc.id, //Este parametro traz a informação do ID
                     ...doc.data(), //Este parametro traz todos os dados do produto
-                }
-            })
-            setProducts(products)
-            setLoading(false)
+                };
+            });
+
+            setProducts(products);
+            setLoading(false);
         })();
     }, [])
 
     return (
         <div className="product__lista">
-            {loading && <h1> CARREGANDO... </h1>}
-            {!loading && 
-                products.map(({id, name})  => (
-                <ProductLink key={id} id={id} name={name} />               
-                
-            ))}
+                {loading && <h1> CARREGANDO... </h1>}
+
+                {!loading && 
+                    products.map((product)  => (
+                    <ProductLink key={product?.id} {...product} />               
+                    
+                ))}
         </div>
     )
 };

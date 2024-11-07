@@ -53,3 +53,9 @@ Botão login e carrinho
     background-color: white;
     color: rgb(29, 29, 29);
 }
+.form-login{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}

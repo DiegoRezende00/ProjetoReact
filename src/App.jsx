@@ -8,7 +8,9 @@ import Item from "./components/Cart/Item.jsx";
 import ProductDetail from "./components/Cart/ProductDetail.jsx"
 import { CartProvider } from "./components/CartContext/CartContext.jsx"
 import { Cart } from "./components/Cart/Cart.jsx"
-// import Category from "./components/Header/Category.jsx"
+import Category from "./components/Header/Category.jsx"
+import SignIn from "./components/Header/SignIn.jsx"
+
 
 
 
@@ -27,7 +29,8 @@ function App() {
           <Route path="/product/:id" element={<ProductDetail />} />
           <Route path="/cart" element={< Cart/>}></Route>
           <Route path='/checkout' element={<Checkout />}/>
-          {/* <Route path="/category/:categoryId" element={<Category />}></Route> */}
+          <Route path="/category/:categoryId" element={<Category />}></Route>
+          <Route path="/login" element={<SignIn />}></Route>
         </Routes>
         <hr />
         

@@ -1,8 +1,17 @@
+.items_category{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  padding: 2rem;
+
+}
 /* #root {
 display: flex;
 align-content: baseline;
 
 }
+/*
 
 .logo {
   height: 6em;

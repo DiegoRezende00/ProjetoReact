@@ -4,28 +4,33 @@ import { Link } from 'react-router-dom';
 
 //NavBar da página com o logo, botão do carrinho e login
 
-const CategoryButton = ({categoryName}) => {
-    <Link to={`category/${categoryName}`}>
-      <button className='p-1 border-collapse'>{categoryName}</button> 
-    </Link>
-  }
+// const CategoryButton = ({categoryName}) => {
+//     <Link to={`category/${categoryName}`}>
+//       <button className='p-1 border-collapse'>{categoryName}</button> 
+//     </Link>
+//   }
   
 
 function Navbar (){
   return (
     <nav className="nav-bar">
-        <div className='nav'>
-            <div className='logo-page'>
-                <Link to={'/index.html'}><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvL4tHGi6J4HfA2BxLTNgVSGWf5Dp3Gc92Dg&s" alt=""/></Link>
-            </div>
-            <div className='nav-link'>
-                {/* <CategoryButton categoryName="mens"/>
-                <CategoryButton categoryName="women"/>
-                <CategoryButton categoryName="eletronics"/> */}
-            </div>
-            <div className='login-cart'>
-                <a href="login.html"><button>Login</button></a> 
-                <Link to='/cart'><CartWidget /></Link>
+        <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+            <div className="relative flex h-16 items-center justify-between"> 
+                <div className='logo-page'>
+                    <Link to={'/index.html'}><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvL4tHGi6J4HfA2BxLTNgVSGWf5Dp3Gc92Dg&s" alt=""/></Link>
+                </div>
+                <div className='hidden sm:ml-6 sm:block'>
+                    <div className='items_category'>
+                        <Link to="/">Página principal</Link>
+                        <Link to="/category/eletronics">Eletrônicos</Link>
+                        <Link to="/category/mens">Masculino</Link>
+                        <Link to="/category/women">Feminino</Link>
+                    </div>
+                </div>
+                <div className='login-cart'>
+                    <Link to='/login'> <button>Login</button></Link>
+                    <Link to='/cart'><CartWidget /></Link>
+                </div>
             </div>
         </div>
     </nav>
